@@ -1,4 +1,4 @@
-#(Chaper Two)[http://opendatastructures.org/ods-cpp/2_7_Discussion_Exercises.html]’s Exercises as defined on 08/01/2017
+#(Chaper Two)[http://opendatastructures.org/ods-cpp/2_7_Discussion_Exercises.html] ’s Exercises as defined on 08/01/2017
 
 - [] Exercise 2.1. The List method addAll(i,c) inserts all elements of the Collection c into the list at position i. (The add(i, x) method is a special case where c = {x}.) Explain why, for the data structures in this chapter, it is not efficient to implement addAll(i,c) by repeated calls to add(i,x). Design and implement a more efficient implementation.
 - [] Exercise 2.2. Design and implement a RandomQueue. This is an imple- mentation of the Queue interface in which the remove() operation removes an element that is chosen uniformly at random among all the elements currently in the queue. (Think of a RandomQueue as a bag in which we can add elements or reach in and blindly remove some random element.) The add(x) and remove() operations in a RandomQueue should run in con- stant time per operation.
