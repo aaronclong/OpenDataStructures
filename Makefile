@@ -123,6 +123,19 @@ lesson_two/fast:
 	$(MAKE) -f lessons/lesson_2/src/CMakeFiles/lesson_two.dir/build.make lessons/lesson_2/src/CMakeFiles/lesson_two.dir/build
 .PHONY : lesson_two/fast
 
+#=============================================================================
+# Target rules for targets named chp_two
+
+# Build rule for target.
+chp_two: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 chp_two
+.PHONY : chp_two
+
+# fast build rule for target.
+chp_two/fast:
+	$(MAKE) -f lessons/lesson_2/src/CMakeFiles/chp_two.dir/build.make lessons/lesson_2/src/CMakeFiles/chp_two.dir/build
+.PHONY : chp_two/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -132,6 +145,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... lesson_two"
+	@echo "... chp_two"
 .PHONY : help
 
 

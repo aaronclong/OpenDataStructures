@@ -186,6 +186,12 @@ Lesson_Two_BINARY_DIR:STATIC=/Users/AaronLong/Dropbox/github/OpenDataStructures/
 Lesson_Two_SOURCE_DIR:STATIC=/Users/AaronLong/Dropbox/github/OpenDataStructures/lessons/lesson_2
 
 //Value Computed by CMake
+Lesson_Two_Sources_BINARY_DIR:STATIC=/Users/AaronLong/Dropbox/github/OpenDataStructures/lessons/lesson_2/src
+
+//Value Computed by CMake
+Lesson_Two_Sources_SOURCE_DIR:STATIC=/Users/AaronLong/Dropbox/github/OpenDataStructures/lessons/lesson_2/src
+
+//Value Computed by CMake
 Lesson_Two_Two_BINARY_DIR:STATIC=/Users/AaronLong/Dropbox/github/OpenDataStructures/lessons/lesson_2/src
 
 //Value Computed by CMake
@@ -202,6 +208,9 @@ OpenDataStructures_BINARY_DIR:STATIC=/Users/AaronLong/Dropbox/github/OpenDataStr
 
 //Value Computed by CMake
 OpenDataStructures_SOURCE_DIR:STATIC=/Users/AaronLong/Dropbox/github/OpenDataStructures
+
+//Dependencies for target
+chp_two_LIB_DEPENDS:STATIC=
 
 
 ########################

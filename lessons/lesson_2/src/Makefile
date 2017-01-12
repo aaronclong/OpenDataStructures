@@ -125,6 +125,48 @@ lesson_two/fast:
 	cd /Users/AaronLong/Dropbox/github/OpenDataStructures && $(MAKE) -f lessons/lesson_2/src/CMakeFiles/lesson_two.dir/build.make lessons/lesson_2/src/CMakeFiles/lesson_two.dir/build
 .PHONY : lesson_two/fast
 
+# Convenience name for target.
+lessons/lesson_2/src/CMakeFiles/chp_two.dir/rule:
+	cd /Users/AaronLong/Dropbox/github/OpenDataStructures && $(MAKE) -f CMakeFiles/Makefile2 lessons/lesson_2/src/CMakeFiles/chp_two.dir/rule
+.PHONY : lessons/lesson_2/src/CMakeFiles/chp_two.dir/rule
+
+# Convenience name for target.
+chp_two: lessons/lesson_2/src/CMakeFiles/chp_two.dir/rule
+
+.PHONY : chp_two
+
+# fast build rule for target.
+chp_two/fast:
+	cd /Users/AaronLong/Dropbox/github/OpenDataStructures && $(MAKE) -f lessons/lesson_2/src/CMakeFiles/chp_two.dir/build.make lessons/lesson_2/src/CMakeFiles/chp_two.dir/build
+.PHONY : chp_two/fast
+
+array_list.o: array_list.cpp.o
+
+.PHONY : array_list.o
+
+# target to build an object file
+array_list.cpp.o:
+	cd /Users/AaronLong/Dropbox/github/OpenDataStructures && $(MAKE) -f lessons/lesson_2/src/CMakeFiles/chp_two.dir/build.make lessons/lesson_2/src/CMakeFiles/chp_two.dir/array_list.cpp.o
+.PHONY : array_list.cpp.o
+
+array_list.i: array_list.cpp.i
+
+.PHONY : array_list.i
+
+# target to preprocess a source file
+array_list.cpp.i:
+	cd /Users/AaronLong/Dropbox/github/OpenDataStructures && $(MAKE) -f lessons/lesson_2/src/CMakeFiles/chp_two.dir/build.make lessons/lesson_2/src/CMakeFiles/chp_two.dir/array_list.cpp.i
+.PHONY : array_list.cpp.i
+
+array_list.s: array_list.cpp.s
+
+.PHONY : array_list.s
+
+# target to generate assembly for a file
+array_list.cpp.s:
+	cd /Users/AaronLong/Dropbox/github/OpenDataStructures && $(MAKE) -f lessons/lesson_2/src/CMakeFiles/chp_two.dir/build.make lessons/lesson_2/src/CMakeFiles/chp_two.dir/array_list.cpp.s
+.PHONY : array_list.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -161,6 +203,10 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... lesson_two"
+	@echo "... chp_two"
+	@echo "... array_list.o"
+	@echo "... array_list.i"
+	@echo "... array_list.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
