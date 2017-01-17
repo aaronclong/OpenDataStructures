@@ -1,24 +1,18 @@
 #ifndef ARRAY_LIST_H_
 #define ARRAY_LIST_H_
 
-//List backed by an Array
+//List backed by an Array Interface
 template <class T> 
 class ArrayList
 {
   public:
-  //constructor
-    ArrayList()
-    {
-     array = new T[10];
-     size = 0;
-     cur = 0;
-    }
-    void add(T e);
-    T get(int i) const;
-    void remove(int i);
-    void resize();
+    virtual void add(T e) = 0;
+    virtual void set(T e, int i) = 0;
+    virtual T get(int i) const = 0;
+    virtual void remove(int i) = 0;
+    virtual void resize() = 0;
 
-  private:
+  protected:
     T *array;
     unsigned int cur;
     unsigned int size;

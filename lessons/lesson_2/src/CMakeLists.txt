@@ -11,5 +11,4 @@ add_library(chp_two SHARED ${LIB})
 
 #Main function for this lesson
 set(SOURCES main.cpp)
-
 add_executable(lesson_two ${SOURCES})
