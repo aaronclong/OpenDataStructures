@@ -4,9 +4,12 @@ cmake_minimum_required(VERSION 3.7.0)
 project (Lesson_Two_Sources)
 
 #Build Problem Sets as Library
-#set(LIB_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/inc/array_list.h)
-include_directories(include ${CMAKE_CURRENT_SOURCE_DIR}/inc)
-set(LIB array_list.cpp)
+#Header Files 
+set(LIB_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/inc/array_list.h
+                 ${CMAKE_CURRENT_SOURCE_DIR}/inc/random_queue.h)
+include_directories(include ${LIB_HEADERS})
+#Source files
+set(LIB random_queue.cpp)
 add_library(chp_two SHARED ${LIB})
 
 #Main function for this lesson

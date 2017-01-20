@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/Cellar/cmake/3.7.0/bin/cmake
+CMAKE_COMMAND = /usr/local/Cellar/cmake/3.7.2/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/Cellar/cmake/3.7.0/bin/cmake -E remove -f
+RM = /usr/local/Cellar/cmake/3.7.2/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -56,10 +56,54 @@ CMAKE_BINARY_DIR = /Users/AaronLong/Dropbox/github/OpenDataStructures
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/local/Cellar/cmake/3.7.2/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/local/Cellar/cmake/3.7.2/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/Cellar/cmake/3.7.2/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/Cellar/cmake/3.7.2/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/Cellar/cmake/3.7.0/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/local/Cellar/cmake/3.7.2/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -111,21 +155,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-lessons/lesson_2/src/CMakeFiles/lesson_two.dir/rule:
-	cd /Users/AaronLong/Dropbox/github/OpenDataStructures && $(MAKE) -f CMakeFiles/Makefile2 lessons/lesson_2/src/CMakeFiles/lesson_two.dir/rule
-.PHONY : lessons/lesson_2/src/CMakeFiles/lesson_two.dir/rule
-
-# Convenience name for target.
-lesson_two: lessons/lesson_2/src/CMakeFiles/lesson_two.dir/rule
-
-.PHONY : lesson_two
-
-# fast build rule for target.
-lesson_two/fast:
-	cd /Users/AaronLong/Dropbox/github/OpenDataStructures && $(MAKE) -f lessons/lesson_2/src/CMakeFiles/lesson_two.dir/build.make lessons/lesson_2/src/CMakeFiles/lesson_two.dir/build
-.PHONY : lesson_two/fast
-
-# Convenience name for target.
 lessons/lesson_2/src/CMakeFiles/chp_two.dir/rule:
 	cd /Users/AaronLong/Dropbox/github/OpenDataStructures && $(MAKE) -f CMakeFiles/Makefile2 lessons/lesson_2/src/CMakeFiles/chp_two.dir/rule
 .PHONY : lessons/lesson_2/src/CMakeFiles/chp_two.dir/rule
@@ -140,32 +169,20 @@ chp_two/fast:
 	cd /Users/AaronLong/Dropbox/github/OpenDataStructures && $(MAKE) -f lessons/lesson_2/src/CMakeFiles/chp_two.dir/build.make lessons/lesson_2/src/CMakeFiles/chp_two.dir/build
 .PHONY : chp_two/fast
 
-array_list.o: array_list.cpp.o
+# Convenience name for target.
+lessons/lesson_2/src/CMakeFiles/lesson_two.dir/rule:
+	cd /Users/AaronLong/Dropbox/github/OpenDataStructures && $(MAKE) -f CMakeFiles/Makefile2 lessons/lesson_2/src/CMakeFiles/lesson_two.dir/rule
+.PHONY : lessons/lesson_2/src/CMakeFiles/lesson_two.dir/rule
 
-.PHONY : array_list.o
+# Convenience name for target.
+lesson_two: lessons/lesson_2/src/CMakeFiles/lesson_two.dir/rule
 
-# target to build an object file
-array_list.cpp.o:
-	cd /Users/AaronLong/Dropbox/github/OpenDataStructures && $(MAKE) -f lessons/lesson_2/src/CMakeFiles/chp_two.dir/build.make lessons/lesson_2/src/CMakeFiles/chp_two.dir/array_list.cpp.o
-.PHONY : array_list.cpp.o
+.PHONY : lesson_two
 
-array_list.i: array_list.cpp.i
-
-.PHONY : array_list.i
-
-# target to preprocess a source file
-array_list.cpp.i:
-	cd /Users/AaronLong/Dropbox/github/OpenDataStructures && $(MAKE) -f lessons/lesson_2/src/CMakeFiles/chp_two.dir/build.make lessons/lesson_2/src/CMakeFiles/chp_two.dir/array_list.cpp.i
-.PHONY : array_list.cpp.i
-
-array_list.s: array_list.cpp.s
-
-.PHONY : array_list.s
-
-# target to generate assembly for a file
-array_list.cpp.s:
-	cd /Users/AaronLong/Dropbox/github/OpenDataStructures && $(MAKE) -f lessons/lesson_2/src/CMakeFiles/chp_two.dir/build.make lessons/lesson_2/src/CMakeFiles/chp_two.dir/array_list.cpp.s
-.PHONY : array_list.cpp.s
+# fast build rule for target.
+lesson_two/fast:
+	cd /Users/AaronLong/Dropbox/github/OpenDataStructures && $(MAKE) -f lessons/lesson_2/src/CMakeFiles/lesson_two.dir/build.make lessons/lesson_2/src/CMakeFiles/lesson_two.dir/build
+.PHONY : lesson_two/fast
 
 main.o: main.cpp.o
 
@@ -194,22 +211,53 @@ main.cpp.s:
 	cd /Users/AaronLong/Dropbox/github/OpenDataStructures && $(MAKE) -f lessons/lesson_2/src/CMakeFiles/lesson_two.dir/build.make lessons/lesson_2/src/CMakeFiles/lesson_two.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+random_queue.o: random_queue.cpp.o
+
+.PHONY : random_queue.o
+
+# target to build an object file
+random_queue.cpp.o:
+	cd /Users/AaronLong/Dropbox/github/OpenDataStructures && $(MAKE) -f lessons/lesson_2/src/CMakeFiles/chp_two.dir/build.make lessons/lesson_2/src/CMakeFiles/chp_two.dir/random_queue.cpp.o
+.PHONY : random_queue.cpp.o
+
+random_queue.i: random_queue.cpp.i
+
+.PHONY : random_queue.i
+
+# target to preprocess a source file
+random_queue.cpp.i:
+	cd /Users/AaronLong/Dropbox/github/OpenDataStructures && $(MAKE) -f lessons/lesson_2/src/CMakeFiles/chp_two.dir/build.make lessons/lesson_2/src/CMakeFiles/chp_two.dir/random_queue.cpp.i
+.PHONY : random_queue.cpp.i
+
+random_queue.s: random_queue.cpp.s
+
+.PHONY : random_queue.s
+
+# target to generate assembly for a file
+random_queue.cpp.s:
+	cd /Users/AaronLong/Dropbox/github/OpenDataStructures && $(MAKE) -f lessons/lesson_2/src/CMakeFiles/chp_two.dir/build.make lessons/lesson_2/src/CMakeFiles/chp_two.dir/random_queue.cpp.s
+.PHONY : random_queue.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... install"
+	@echo "... list_install_components"
+	@echo "... chp_two"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... lesson_two"
-	@echo "... chp_two"
-	@echo "... array_list.o"
-	@echo "... array_list.i"
-	@echo "... array_list.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... random_queue.o"
+	@echo "... random_queue.i"
+	@echo "... random_queue.s"
 .PHONY : help
 
 

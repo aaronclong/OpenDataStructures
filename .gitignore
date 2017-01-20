@@ -1,6 +1,10 @@
 ### CMake ###
 *.cmake
 CMakeFiles/
+build/
+googletest-download/
+CMakeCache.txt
+main
 
 ### CMake ###
 
