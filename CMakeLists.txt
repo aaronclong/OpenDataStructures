@@ -1,4 +1,6 @@
 cmake_minimum_required(VERSION 3.7.0)
+#optional line to designate the compiler
+SET(CMAKE_C_COMPILER /usr/local/bin/clang++)
 project (OpenDataStructures)
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build/lib)

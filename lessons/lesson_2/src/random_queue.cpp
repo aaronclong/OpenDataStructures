@@ -1,25 +1,26 @@
 #include "array_list.h"
 #include "random_queue.h"
-#include <stdlib.h> //random
+#include <algorithm>
+#include <cstdlib> //random
 
 //Random Addition in the Queue
 template <class T>
-void RandomQueue::add(T e)
+void RandomQueue<T>::add(T e) const
 {
   //Need to rewrite to accomidate circular array
   if ((this->size+1) >= this->length) this->resize();
   this->array[(this->cur+this->size) % this->length] = e;
-  size++;
+  this->size++;
 }
 
 template <class T>
-void RandomQueue::remove()
+void RandomQueue<T>::remove()
 {
-  int random = rand() % this->size;
+  int random = std::rand() % this->size;
   //Overwrite the array from the deleted element 
   //TODO: Test to see if was done correctly
   //TODO: Rewrite to better accomodate quicker shift
-  int shift = 
+  int shift = this->size -this->cur;
   std::copy(this->array+(1+random),
             this->array+this->length,
             this->array+random);
@@ -29,7 +30,7 @@ void RandomQueue::remove()
 
 //Expand or contract the backing array
 template <class T>
-void RandomQueue::resize()
+void RandomQueue<T>::resize()
 {
   T *resized_array = new T[this->length*2];
   //Fast copy for all items in the array until the end
@@ -42,7 +43,7 @@ void RandomQueue::resize()
   }
   this->length = this->length * 2;
   T *buff = this->array;
-  this-array = resized_array;
+  this->array = resized_array;
   delete buff;
 }
 
@@ -53,7 +54,7 @@ void RandomQueue::resize()
 //Will copy internal array and return it
 //TODO: Double check if copy is working
 template <class T>
-T * RandomQueue::getAll()
+T * RandomQueue<T>::getAll()
 {
   T *array_buff = new T[this->length];
   std::copy(this->array, this->array+this->length, array_buff);

@@ -7,3 +7,7 @@ project (Lesson_Two)
 add_subdirectory (src) 
 
 #add_subdirectory (test) 
+
+#Main function for this lesson
+set(SOURCES main.cpp)
+add_executable(lesson_two ${SOURCES})
