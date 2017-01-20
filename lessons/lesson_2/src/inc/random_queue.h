@@ -13,9 +13,9 @@ class RandomQueue: public ArrayList<T>
     {
       this->array = new T[10];
       //Serves as J on delete entries
-      this->cur = 0;
+      this->cur = 0; //Marks the next element to be deleted
       this->length = 10; //The length of the array structure
-      this->size = 0;
+      this->size = 0; //How many elements are currently being stored
     }
     //Destructor
     ~RandomQueue()

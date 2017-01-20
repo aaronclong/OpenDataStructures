@@ -3,11 +3,10 @@
 #include <algorithm>
 #include <cstdlib> //random
 
-//Random Addition in the Queue
+//Single addition 
 template <class T>
 void RandomQueue<T>::add(T e)
 {
-  //Need to rewrite to accomidate circular array
   if ((this->size+1) >= this->length) this->resize();
   this->array[(this->cur+this->size) % this->length] = e;
   this->size++;
@@ -16,22 +15,43 @@ void RandomQueue<T>::add(T e)
 template <class T>
 void RandomQueue<T>::add(T a[])
 {
-  //to implement
+  //Function argument's length
+  int the_length = sizeof(a) / sizeof(int);
+  if ((this->size + the_length) >= this->length)
+  {
+    resize();
+    add(a); // to double check that the length is sutable 
+    return;
+  }
+
 }
 
 template <class T>
 void RandomQueue<T>::remove()
 {
+
   int random = std::rand() % this->size;
   //Overwrite the array from the deleted element 
-  //TODO: Test to see if was done correctly
-  //TODO: Rewrite to better accomodate quicker shift
-  int shift = this->size -this->cur;
-  std::copy(this->array+(1+random),
-            this->array+this->length,
-            this->array+random);
-  this->array[random];
-  this->size--;
+  //Check which side the shift should happen
+  if ((this->size-this->cur) < (this->length/2))
+    //left shift
+  {
+    std::copy(this->array+this->cur,
+            this->array+(random+1),
+            this->array+(this->cur+1));
+    //Update incrementors
+    this->cur++;
+    this->size--;
+  }
+  else
+  //Right Shift
+  {
+    std::copy(this->array+(1+random),
+              this->array+this->length,
+              this->array+random);
+    //Update Incrementor
+    this->size--;
+  }
 }
 
 //Expand or contract the backing array
