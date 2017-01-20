@@ -23,11 +23,12 @@ class RandomQueue: public ArrayList<T>
       delete this->array;
     }
 
-    T *getAll();
+    T *getAll() const;
 
     //Implementing the interfaces
-    virtual void add(T e) const;
-    virtual T *get(int i);
+    virtual void add(T e); //single element 
+    virtual void add(T a[]); //add an array
+    virtual T get(int i) const;
     virtual void remove();
     virtual void remove(int i);
     virtual void set(T e, int i);

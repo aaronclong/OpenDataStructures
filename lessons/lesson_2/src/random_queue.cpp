@@ -5,12 +5,18 @@
 
 //Random Addition in the Queue
 template <class T>
-void RandomQueue<T>::add(T e) const
+void RandomQueue<T>::add(T e)
 {
   //Need to rewrite to accomidate circular array
   if ((this->size+1) >= this->length) this->resize();
   this->array[(this->cur+this->size) % this->length] = e;
   this->size++;
+}
+
+template <class T>
+void RandomQueue<T>::add(T a[])
+{
+  //to implement
 }
 
 template <class T>
@@ -47,14 +53,10 @@ void RandomQueue<T>::resize()
   delete buff;
 }
 
-//template <class T>
-//void RandomQueue::shift()
-//{}
-
 //Will copy internal array and return it
 //TODO: Double check if copy is working
 template <class T>
-T * RandomQueue<T>::getAll()
+T * RandomQueue<T>::getAll() const
 {
   T *array_buff = new T[this->length];
   std::copy(this->array, this->array+this->length, array_buff);

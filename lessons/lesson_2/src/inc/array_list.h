@@ -6,7 +6,10 @@ template <class T>
 class ArrayList
 {
   public:
+    //overload add for arrays and more
     virtual void add(T e) = 0;
+    virtual void add(T a[]) = 0;
+
     virtual void set(T e, int i) = 0;
     virtual T get(int i) const = 0;
     //Overloading methods to better accomodate more instances
