@@ -6,7 +6,10 @@ project (Lesson_Two)
 #Subdirectories
 add_subdirectory (src) 
 
-#add_subdirectory (test) 
+add_subdirectory (tests) 
+
+#Link Directories
+LINK_DIRECTORIES(${CMAKE_SOURCE_DIR}/build/lib)
 
 #Main function for this lesson
 set(SOURCES main.cpp)

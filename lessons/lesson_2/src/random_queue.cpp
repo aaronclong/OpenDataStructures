@@ -33,7 +33,8 @@ void RandomQueue<T>::add(T a[])
 template <class T>
 T RandomQueue<T>::get(int i) const
 {
-  return this->array[i];
+  if (i > this->length) return;
+  return this->array[(this->cur+this->size) % i];
 }
 
 //Will copy internal array and return it
@@ -74,6 +75,33 @@ void RandomQueue<T>::remove()
   }
 }
 
+//Remove based on specify index
+template<class T>
+void RandomQueue::remove(int i)
+{
+  //Checks the current position of elements
+  int check = (this->size-this->size+i) % this->length;
+  if (check < (this->length/2))
+    //left shift
+  {
+    std::copy(this->array+this->cur,
+            this->array+(check+1),
+            this->array+(this->cur+1));
+    //Update incrementors
+    this->cur++;
+    this->size--;
+  }
+  else
+  //Right Shift
+  {
+    std::copy(this->array+(check+1),
+              this->array+this->length,
+              this->array+random);
+    //Update Incrementor
+    this->size--;
+  }
+}
+
 //Expand or contract the backing array
 template <class T>
 void RandomQueue<T>::resize()
@@ -91,4 +119,11 @@ void RandomQueue<T>::resize()
   T *buff = this->array;
   this->array = resized_array;
   delete buff;
+}
+
+template <class T>
+void RandomQueue::set(T e, int i)
+{
+  if (i > this->length) return;
+  this->array[(this->cur+this->size+i) % this->length] = e;
 }

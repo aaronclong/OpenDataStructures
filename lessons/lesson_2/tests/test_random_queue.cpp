@@ -1,3 +1,4 @@
+#include <algorithm>
 #include "gtest/gtest.h"
 #include "random_queue.h"
 
@@ -10,13 +11,16 @@ TEST(RandomQueue, add_array_of_elements)
   int array_two[7] = { 10, 45, 60, 77, 55, 67, 89 };
   que.add(array_one);
   //remove some elements
-  que.remove(); que.remove();
+  que.remove(0); que.remove(1);
   que.add(array_two);
   //Checking backing array
-  int *buff 
+  int *buff = que.getAll();
+  //Array to compare
+  int cmp[10] = { 7, 8, 0, 10, 45, 60, 77, 55, 67, 89 };
+  EXPECT_TRUE(std::equal(cmp, cmp+10, buff));
 }
 
-//Tests Random Removal
+/* Tests Random Removal
 TEST(RandomQueue, Random_remove)
 {
   int array[5] = { 1, 14, 20, 90, 75 };
@@ -28,3 +32,4 @@ TEST(RandomQueue, Random_remove)
   EXPECT_TRUE(q.getAll()[0] != 10);
   EXPECT_TRUE(q.getAll()[2] != 20);
 }
+*/

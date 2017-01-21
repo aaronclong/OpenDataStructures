@@ -30,6 +30,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/Users/AaronLong/Dropbox/github/OpenDataStructures/lessons/lesson_2/src/cmake_install.cmake")
+  include("/Users/AaronLong/Dropbox/github/OpenDataStructures/lessons/lesson_2/tests/cmake_install.cmake")
 
 endif()
 

@@ -1,6 +1,7 @@
 #ifndef RANDOM_QUEUE_H_
 #define RANDOM_QUEUE_H_
 
+#include <algorithm>
 #include "array_list.h"
 #include <cstdlib> //random
 
