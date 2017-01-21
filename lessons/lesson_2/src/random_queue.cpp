@@ -77,7 +77,7 @@ void RandomQueue<T>::remove()
 
 //Remove based on specify index
 template<class T>
-void RandomQueue::remove(int i)
+void RandomQueue<T>::remove(int i)
 {
   //Checks the current position of elements
   int check = (this->size-this->size+i) % this->length;
@@ -122,7 +122,7 @@ void RandomQueue<T>::resize()
 }
 
 template <class T>
-void RandomQueue::set(T e, int i)
+void RandomQueue<T>::set(T e, int i)
 {
   if (i > this->length) return;
   this->array[(this->cur+this->size+i) % this->length] = e;
