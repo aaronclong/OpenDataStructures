@@ -23,7 +23,27 @@ void RandomQueue<T>::add(T a[])
     add(a); // to double check that the length is sutable 
     return;
   }
+  for(int i = 0; i < the_length; i++)
+  {
+     this->array[(this->cur+this->size+i)] = a[i];
+     this->size++;
+  }
+}
 
+template <class T>
+T RandomQueue<T>::get(int i) const
+{
+  return this->array[i];
+}
+
+//Will copy internal array and return it
+//TODO: Double check if copy is working
+template <class T>
+T * RandomQueue<T>::getAll() const
+{
+  T *array_buff = new T[this->length];
+  std::copy(this->array, this->array+this->length, array_buff);
+  return array_buff;
 }
 
 template <class T>
@@ -71,14 +91,4 @@ void RandomQueue<T>::resize()
   T *buff = this->array;
   this->array = resized_array;
   delete buff;
-}
-
-//Will copy internal array and return it
-//TODO: Double check if copy is working
-template <class T>
-T * RandomQueue<T>::getAll() const
-{
-  T *array_buff = new T[this->length];
-  std::copy(this->array, this->array+this->length, array_buff);
-  return array_buff;
 }
