@@ -1,6 +1,6 @@
 #include <algorithm>
 #include "gtest/gtest.h"
-#include "random_queue.h"
+#include "../src/inc/random_queue.h"
 
 //Tests Better add multiple elements
 TEST(RandomQueue, add_array_of_elements)

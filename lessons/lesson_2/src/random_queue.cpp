@@ -1,5 +1,5 @@
-#include "array_list.h"
-#include "random_queue.h"
+#include "inc/array_list.h"
+#include "inc/random_queue.h"
 #include <algorithm>
 #include <cstdlib> //random
 
