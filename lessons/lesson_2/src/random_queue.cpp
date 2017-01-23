@@ -3,6 +3,22 @@
 #include <algorithm>
 #include <cstdlib> //random
 
+template <class T>
+RandomQueue<T>::RandomQueue()
+{
+  this->array = new T[10];
+      //Serves as J on delete entries
+      this->cur = 0; //Marks the next element to be deleted
+      this->length = 10; //The length of the array structure
+      this->size = 0; //How many elements are currently being stored
+}
+
+template <class T>
+RandomQueue<T>::~RandomQueue()
+{
+  delete this->array;
+}
+
 //Single addition 
 template <class T>
 void RandomQueue<T>::add(T e)

@@ -11,4 +11,4 @@ include_directories(include ${CMAKE_CURRENT_SOURCE_DIR}/inc)
 set(LIB random_queue.cpp)
 add_library(chp_two SHARED ${LIB_H} ${LIB})
 
-target_include_directories(chp_two PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/inc/array_list.h)
+#target_include_directories(chp_two PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/inc/array_list.h)
