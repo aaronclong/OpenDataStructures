@@ -9,10 +9,10 @@ TEST(RandomQueue, add_array_of_elements)
   RandomQueue<int> que;
   int array_one[5] = { 2, 5, 7, 8, 0 };
   int array_two[7] = { 10, 45, 60, 77, 55, 67, 89 };
-  que.add(array_one);
+  que.add(5, array_one);
   //remove some elements
   que.remove(0); que.remove(1);
-  que.add(array_two);
+  que.add(7, array_two);
   //Checking backing array
   int *buff = que.getAll();
   //Array to compare
@@ -26,7 +26,7 @@ TEST(RandomQueue, Random_remove)
   int array[5] = { 1, 14, 20, 90, 75 };
   //class instance
   RandomQueue<int> que;
-  que.add(array);
+  que.add(5, array);
   int *buff = que.getAll();
   std::cout << buff << std::endl;
   //change this

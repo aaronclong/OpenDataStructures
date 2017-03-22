@@ -29,17 +29,15 @@ void RandomQueue<T>::add(T e)
 }
 
 template <class T>
-void RandomQueue<T>::add(T a[])
+void RandomQueue<T>::add(int length, T a[])
 {
-  //Function argument's length
-  int the_length = sizeof(a) / sizeof(int);
-  if ((this->size + the_length) >= this->length)
+  if ((this->size + length) >= this->length)
   {
     resize();
-    add(a); // to double check that the length is sutable 
+    add(length, a); // to double check that the length is sutable 
     return;
   }
-  for(int i = 0; i < the_length; i++)
+  for(int i = 0; i < this->size + length; i++)
   {
      this->array[(this->cur+this->size+i)] = a[i];
      this->size++;

@@ -6,7 +6,7 @@
 #include <cstdlib> //random
 
 template <class T>
-class RandomQueue: public ArrayList<T>
+class RandomQueue
 {
   public:
     //Constructor
@@ -17,19 +17,22 @@ class RandomQueue: public ArrayList<T>
     T *getAll() const;
 
     //Implementing the interfaces
-    virtual void add(T e); //single element 
-    virtual void add(T a[]); //add an array
-    virtual T get(int i) const;
-    virtual void remove();
-    virtual void remove(int i);
-    virtual void set(T e, int i);
+    void add(T e); //single element 
+    void add(int length, T a[]); //add an array
+    T get(int i) const;
+    void remove();
+    void remove(int i);
+    void set(T e, int i);
 
   private:
     unsigned int cur;
     //Fills gaps in the backing array
     //void shift();
   protected:
-    virtual void resize();
+    T *array;
+    unsigned int length;
+    unsigned int size;
+    void resize();
 };
 
 template class RandomQueue<int>;
