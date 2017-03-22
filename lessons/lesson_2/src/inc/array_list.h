@@ -23,4 +23,8 @@ class ArrayList
     virtual void resize() = 0;
 };
 
+// explicit instantiations
+template class ArrayList<int>;
+//template class ArrayList<int>;
+
 #endif  // ARRAY_LIST_H_

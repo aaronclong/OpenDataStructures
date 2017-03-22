@@ -32,4 +32,5 @@ class RandomQueue: public ArrayList<T>
     virtual void resize();
 };
 
+template class RandomQueue<int>;
 #endif  // RANDOM_QUEUE_H_

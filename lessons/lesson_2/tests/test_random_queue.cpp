@@ -20,7 +20,7 @@ TEST(RandomQueue, add_array_of_elements)
   EXPECT_TRUE(std::equal(cmp, cmp+10, buff));
 }
 
-/* Tests Random Removal
+//Tests Random Removal
 TEST(RandomQueue, Random_remove)
 {
   int array[5] = { 1, 14, 20, 90, 75 };
@@ -28,8 +28,8 @@ TEST(RandomQueue, Random_remove)
   RandomQueue<int> que;
   que.add(array);
   int *buff = que.getAll();
+  std::cout << buff << std::endl;
   //change this
-  EXPECT_TRUE(q.getAll()[0] != 10);
-  EXPECT_TRUE(q.getAll()[2] != 20);
+  EXPECT_TRUE(que.getAll()[0] != 10);
+  EXPECT_TRUE(que.getAll()[2] != 20);
 }
-*/

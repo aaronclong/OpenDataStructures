@@ -9,7 +9,7 @@ add_subdirectory (src)
 add_subdirectory (tests) 
 
 #include directory
-#target_include_directories(include ${CMAKE_CURRENT_SOURCE_DIR}/src/inc)
+include_directories(include ${CMAKE_CURRENT_SOURCE_DIR}/src/inc)
 
 #Main function for this lesson
 set(SOURCES main.cpp)

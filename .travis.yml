@@ -1,0 +1,6 @@
+language: cpp
+
+before_install:
+  - brew update
+  - brew install --with-clang llvm
+  - brew link llvm 

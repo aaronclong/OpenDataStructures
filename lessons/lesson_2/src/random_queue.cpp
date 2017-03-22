@@ -49,7 +49,7 @@ void RandomQueue<T>::add(T a[])
 template <class T>
 T RandomQueue<T>::get(int i) const
 {
-  if (i > this->length) return;
+  if (i > this->length) return 0;
   return this->array[(this->cur+this->size) % i];
 }
 
