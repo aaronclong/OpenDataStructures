@@ -18,7 +18,7 @@ class RandomQueue
 
     //Implementing the interfaces
     void add(T e); //single element 
-    void add(int length, T a[]); //add an array
+    void add(int len, T a[]); //add an array
     T get(int i) const;
     void remove();
     void remove(int i);

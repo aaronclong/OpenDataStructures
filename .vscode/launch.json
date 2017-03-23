@@ -5,7 +5,7 @@
             "name": "C++ Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "enter program name, for example ${workspaceRoot}/a.out",
+            "program": "${workspaceRoot}/build/bin/lesson_two",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceRoot}",

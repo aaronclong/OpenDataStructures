@@ -1,6 +1,8 @@
 #include "inc/array_list.h"
 #include "inc/random_queue.h"
 #include <algorithm>
+#include <stdlib.h>
+#include <iostream> 
 #include <cstdlib> //random
 
 template <class T>
@@ -23,25 +25,29 @@ RandomQueue<T>::~RandomQueue()
 template <class T>
 void RandomQueue<T>::add(T e)
 {
+  std::cout << "This is happening" << std::endl;
   if ((this->size+1) >= this->length) this->resize();
   this->array[(this->cur+this->size) % this->length] = e;
   this->size++;
 }
 
 template <class T>
-void RandomQueue<T>::add(int length, T a[])
+void RandomQueue<T>::add(int len, T a[])
 {
-  if ((this->size + length) >= this->length)
+  std::cout << "The Begining" << std::endl;
+  std::cout << this->size << std::endl;
+  std::cout << this->length << std::endl;
+  std::cout << "Size and length: ";
+  std::cout << (this->size + len) << std::endl;
+  if ((this->size + len) >= this->length) resize(); // Maybe not expanding as soon enough, check soon?
+  for(int i = 0; i < (this->size + len); i++)
   {
-    resize();
-    add(length, a); // to double check that the length is sutable 
-    return;
-  }
-  for(int i = 0; i < this->size + length; i++)
-  {
+     std::cout << "In the loop: "; 
+     std::cout << i << std::endl;
+     std::cout << this->size << std::endl;
      this->array[(this->cur+this->size+i)] = a[i];
-     this->size++;
   }
+  this->size += len;
 }
 
 template <class T>

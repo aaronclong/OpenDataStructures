@@ -4,8 +4,7 @@ cmake_minimum_required(VERSION 3.7.0)
 project (Lesson_Two)
 
 #Subdirectories
-add_subdirectory (src) 
-
+add_subdirectory (src)
 add_subdirectory (tests) 
 
 #include directory
