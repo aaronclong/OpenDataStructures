@@ -108,9 +108,9 @@ void RandomQueue<T>::remove(int i)
   else
   //Right Shift
   {
-    std::copy(this->array+(check+1),
-              this->array+this->length,
-              this->array+random);
+    //std::copy(this->array+(check+1),
+              //this->array+this->length,
+              //this->array+(random);
     //Update Incrementor
     this->size--;
   }
@@ -141,3 +141,5 @@ void RandomQueue<T>::set(T e, int i)
   if (i > this->length) return;
   this->array[(this->cur+this->size+i) % this->length] = e;
 }
+
+template class RandomQueue<int>;
